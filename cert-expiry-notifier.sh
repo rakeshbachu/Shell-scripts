@@ -31,7 +31,7 @@ do
         echo "`fold -w 64 /usr/local/mycerts/$j.crt`" >> /usr/local/mycerts/$j-final.crt
         echo -e "-----END CERTIFICATE-----" >> /usr/local/mycerts/$j-final.crt
         dat=`openssl x509 -enddate -noout -in /usr/local/mycerts/$j-final.crt | awk -F "=" '{print $2}'`
-        if [ -z "$dat" ]
+        if [ -z "$dat" ] 
         then
                 echo "cannot load certificate for $j"
                 continue
